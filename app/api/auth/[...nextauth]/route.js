@@ -67,7 +67,7 @@ const handler = NextAuth({
   cookies: {
     // Ensure the session cookie is secure and has appropriate settings
     secure: process.env.NODE_ENV === 'production',
-    maxAge: 30 * 24 * 60 * 60, // 30 days
+    maxAge: 0 * 0 * 0 * 1, // 30 days
   },
   callbacks: {
     async session({ session }) {
