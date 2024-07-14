@@ -7,16 +7,16 @@ const Form = ({type, post, setPost, submitting, handleSubmit}) => {
     <h1 className="head_text text-left">
      <span className="blue_gradient"> {type} Post</span>
     </h1>
-    <p className="desc text-left max-w-md">
+    <p className="desc_gray text-left max-w-md">
       {type} and share amazing prompts with world, and let your imagination run wild with any AI-powered platform
     </p>
 
     <form 
       onSubmit={handleSubmit}
-      className="mt-10 w-full flex flex-col gap-7 max-w-2xl glassmorphism"
+      className="mt-10 w-full flex flex-col gap-7 max-w-2xl glassmorphism_new"
     >
       <label>
-        <span className="font-satoshi font-semibold text-base text-gray-700">
+        <span className="font-satoshi font-semibold text-base text-[#f4faf1]">
           Your AI Prompt
         </span>
 
@@ -26,11 +26,11 @@ const Form = ({type, post, setPost, submitting, handleSubmit}) => {
           prompt: e.target.value})}}
           placeholder="Write your prompt here..."
           required
-          className="form_textarea"></textarea>
+          className="form_textarea_new"></textarea>
       </label>
 
       <label>
-        <span className="font-satoshi font-semibold text-base text-gray-700">
+        <span className="font-satoshi font-semibold text-base text-[#f4faf1]">
           Tag
         </span>
 
@@ -40,7 +40,7 @@ const Form = ({type, post, setPost, submitting, handleSubmit}) => {
           tag: e.target.value})}}
           placeholder="#product, #webdevelopment, #seo"
           required
-          className="form_input"></input>
+          className="form_input_new"></input>
       </label>
 
       <div className="flex-end mx-3 mb-5 gap-4">

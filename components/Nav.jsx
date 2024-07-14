@@ -30,18 +30,18 @@ const Nav = () => {
           height={30}
           className="object-contain"
         />
-        <p className="logo_text">Prompt Adviser</p>
+        <p className="logo_text_new">Prompt Adviser</p>
       </Link>
 
             {/* Desktop Navigation */}
             <div className='sm:flex hidden'>
         {session?.user ? (
           <div className='flex gap-3 md:gap-5'>
-            <Link href='/create-prompt' className='black_btn'>
+            <Link href='/create-prompt' className='white_btn'>
               Create Post
             </Link>
 
-            <button type='button' onClick={signOut} className='outline_btn'>
+            <button type='button' onClick={signOut} className='outline_btn_new'>
               Sign Out
             </button>
 
@@ -65,7 +65,7 @@ const Nav = () => {
                   onClick={() => {
                     signIn(provider.id);
                   }}
-                  className='black_btn'
+                  className='white_btn'
                 >
                   Sign in
                 </button>
@@ -78,7 +78,7 @@ const Nav = () => {
       {/* Mobile Navigation */}
       <div className='sm:hidden flex relative'>
         {session?.user ? (
-          <div className='flex'>
+          <div className='flex z-30'>
             <Image
               src={session?.user.image}
               width={37}
@@ -93,7 +93,7 @@ const Nav = () => {
                 <Link
                   href='/profile'
                   className='dropdown_link'
-                  onClick={() => setToggleDropdown(false)}
+                  onClick={() => setToggleDropDown(false)}
                 >
                   My Profile
                 </Link>
@@ -107,7 +107,7 @@ const Nav = () => {
                 <button
                   type='button'
                   onClick={() => {
-                    setToggleDropdown(false);
+                    setToggleDropDown(false);
                     signOut();
                   }}
                   className='mt-5 w-full black_btn'
@@ -127,7 +127,7 @@ const Nav = () => {
                   onClick={() => {
                     signIn(provider.id);
                   }}
-                  className='black_btn'
+                  className='white_btn'
                 >
                   Sign in
                 </button>

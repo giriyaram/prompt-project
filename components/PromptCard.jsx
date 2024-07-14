@@ -20,7 +20,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   }
 
   return (
-    <div className="prompt_card">
+    <div className="prompt_card_new">
       <div className="flex justify-between items-start gap-5">
         <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
           <Image
@@ -32,32 +32,32 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
           />
 
           <div className=" flex flex-col">
-            <h3 className="font-satoshi font-semibold text-gray-900 font-">
+            <h3 className="font-satoshi font-semibold text-slate-200 font-">
               {post.creator.username}
             </h3>
-            <p className="font-inter text-sm text-gray-500">
+            <p className="font-inter text-sm text-slate-400">
               {post.creator.email}
             </p>
           </div>
         </div>
 
-        <div className="copy_btn" onClick={handleCopy}>
+        <div className="copy_btn_new" onClick={handleCopy}>
           <Image
             src={
               copied === post.prompt
                 ? "assets/icons/tick.svg"
                 : "assets/icons/copy.svg"
             }
-            width={12}
-            height={12}
+            width={14}
+            height={14}
           />
         </div>
       </div>
 
-      <p className="my-4 font-satoshi text-sm text-gary-700">
+      <p className="my-4 font-satoshi text-sm text-zinc-300">
         {post.prompt}
       </p>
-      <p className="font-inter text-sm blue_gradient cursor-pointer"
+      <p className="font-inter text-sm text-[#69c3ff] cursor-pointer"
         onClick={() => {handleTagClick && handleTagClick(post.tag)}}>
         {post.tag}
       </p>
@@ -70,7 +70,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
             Edit
           </p>
 
-          <p className="font-inter text-sm orange_gradient cursor-pointer" 
+          <p className="font-inter text-sm text-[#ff738a] cursor-pointer" 
            onClick={handleDelete} >
             Delete
           </p>
