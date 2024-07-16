@@ -10,7 +10,7 @@ export const GET = async (request) => {
 
         const prompts = await Prompt.find({}).populate('creator');
         
-        console.log("Fetched prompts:", prompts);
+        // console.log("Fetched prompts:", prompts);
 
         return new Response(JSON.stringify(prompts), { status: 200 });
     } catch (error) {
