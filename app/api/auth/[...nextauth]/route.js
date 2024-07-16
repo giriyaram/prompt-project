@@ -64,11 +64,11 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     })
   ],
-  cookies: {
-    // Ensure the session cookie is secure and has appropriate settings
-    secure: process.env.NODE_ENV === 'production',
-    maxAge: 0 * 0 * 0 * 1, // 30 days
-  },
+  // cookies: {
+  //   // Ensure the session cookie is secure and has appropriate settings
+  //   secure: process.env.NODE_ENV === 'production',
+  //   maxAge: 0 * 0 * 0 * 1, // 30 days
+  // },
   callbacks: {
     async session({ session }) {
       // store the user id from MongoDB to session
