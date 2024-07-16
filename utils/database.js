@@ -13,8 +13,8 @@ export const connectToDB = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI, {
       dbName: "share_prompt",
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+      // useNewUrlParser: true,
+      // useUnifiedTopology: true,
     })
 
     isConnected = true;
@@ -24,3 +24,18 @@ export const connectToDB = async () => {
     console.log(error);
   }
 }
+
+export const disconnectFromDB = async () => {
+  if (!isConnected) {
+    console.log('MongoDB is not connected');
+    return;
+  }
+
+  try {
+    await mongoose.disconnect();
+    isConnected = false;
+    console.log('MongoDB disconnected');
+  } catch (error) {
+    console.log('Error disconnecting from MongoDB', error);
+  }
+};
