@@ -3,7 +3,6 @@ import { connectToDB } from "@utils/database";
 
 export const GET = async (request) => {
     try {
-        debugger;
         console.log("Connecting to DB...");
         await connectToDB();
         console.log("Connected to DB");
