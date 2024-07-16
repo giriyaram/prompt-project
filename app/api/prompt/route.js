@@ -9,7 +9,7 @@ export const GET = async (request) => {
         console.log("Connected to DB");
 
         const prompts = await Prompt.find({}).populate('creator');
-        await disconnectFromDB();
+        
         console.log("Fetched prompts:", prompts);
 
         return new Response(JSON.stringify(prompts), { status: 200 });
