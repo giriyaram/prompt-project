@@ -1,5 +1,5 @@
 import Prompt from "@models/prompt";
-import { connectToDB } from "@utils/database";
+import { connectToDB, disconnectFromDB } from "@utils/database";
 
 export const GET = async (request) => {
     try {
@@ -8,8 +8,8 @@ export const GET = async (request) => {
         console.log("Connected to DB");
 
         const prompts = await Prompt.find({}).populate('creator');
-        
-        // console.log("Fetched prompts:", prompts);
+        await disconnectFromDB();
+        console.log("disconnected from db");
 
         return new Response(JSON.stringify(prompts), { status: 200 });
     } catch (error) {
